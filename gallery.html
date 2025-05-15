@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery - Art Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Keerthana Jayaprakash</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    <main class="main-content">
+        <h1>Gallery</h1>
+        <div class="collection-tabs">
+            <button class="tab active" data-collection="blipped">Blipped</button>
+            <button class="tab" data-collection="sketchbook">Sketchbook</button>
+        </div>
+        <section id="collection-blipped" class="collection-section">
+            <h2 class="collection-heading">Blipped</h2>
+            <div class="gallery-grid">
+                <div class="art-tile">
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Sunset Over Water">
+                    <h3>Sunset Over Water</h3>
+                    <p class="description">Acrylic on canvas capturing the vibrant hues of sunset.</p>
+                    <span class="size">24" x 36"</span>
+                </div>
+                <div class="art-tile">
+                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?auto=format&fit=crop&w=400&q=80" alt="Forest Path">
+                    <h3>Forest Path</h3>
+                    <p class="description">Oil painting of a serene forest trail in autumn.</p>
+                    <span class="size">18" x 24"</span>
+                </div>
+                <div class="art-tile">
+                    <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Mountain Majesty">
+                    <h3>Mountain Majesty</h3>
+                    <p class="description">Watercolor of towering peaks at dawn.</p>
+                    <span class="size">16" x 20"</span>
+                </div>
+            </div>
+        </section>
+        <section id="collection-sketchbook" class="collection-section" style="display:none;">
+    <h2 class="collection-heading">Sketchbook</h2>
+    <div class="gallery-grid">
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_9008.jpg" alt="IMG_9008.jpg">
+        </div>
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_9007.jpg" alt="IMG_9007.jpg">
+        </div>
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_9006.jpg" alt="IMG_9006.jpg">
+        </div>
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_9005.jpg" alt="IMG_9005.jpg">
+        </div>
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_9004.jpg" alt="IMG_9004.jpg">
+        </div>
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_9003.jpg" alt="IMG_9003.jpg">
+        </div>
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_9002.jpg" alt="IMG_9002.jpg">
+        </div>
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_9001.jpg" alt="IMG_9001.jpg">
+        </div>
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_8999.jpg" alt="IMG_8999.jpg">
+        </div>
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_8998.jpg" alt="IMG_8998.jpg">
+        </div>
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_8997.jpg" alt="IMG_8997.jpg">
+        </div>
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_8995.jpg" alt="IMG_8995.jpg">
+        </div>
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_8994.jpg" alt="IMG_8994.jpg">
+        </div>
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_8993.jpg" alt="IMG_8993.jpg">
+        </div>
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_8992.jpg" alt="IMG_8992.jpg">
+        </div>
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_8991.jpg" alt="IMG_8991.jpg">
+        </div>
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_8989.jpg" alt="IMG_8989.jpg">
+        </div>
+        <div class="art-tile">
+            <img src="IMAGES/Sketchbook/IMG_8988.jpg" alt="IMG_8988.jpg">
+        </div>
+    </div>
+</section>
+
+        <!-- Image Modal -->
+    <div id="image-modal" class="image-modal">
+      <span class="image-modal-close" id="image-modal-close">&times;</span>
+      <img class="image-modal-content" id="image-modal-img" src="" alt="Artwork Full View">
+    </div>
+    <script>
+    // Tab switching logic
+    const tabs = document.querySelectorAll('.tab');
+    const collections = document.querySelectorAll('.collection-section');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            collections.forEach(section => {
+                section.style.display = (section.id === 'collection-' + tab.dataset.collection) ? '' : 'none';
+            });
+        });
+    });
+    // Modal logic for gallery images
+    const modal = document.getElementById('image-modal');
+    const modalImg = document.getElementById('image-modal-img');
+    const modalClose = document.getElementById('image-modal-close');
+    // Attach click event to all images in .gallery-grid
+    document.querySelectorAll('.gallery-grid img').forEach(img => {
+      img.style.cursor = 'pointer';
+      img.addEventListener('click', function() {
+        modal.style.display = 'flex';
+        modalImg.src = this.src;
+        modalImg.alt = this.alt;
+      });
+    });
+    // Close modal on close button or clicking outside image
+    modalClose.onclick = function() {
+      modal.style.display = 'none';
+      modalImg.src = '';
+    };
+    modal.onclick = function(e) {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        modalImg.src = '';
+      }
+    };
+    // Auto tab selection based on hash
+    window.addEventListener('DOMContentLoaded', function() {
+      const hash = window.location.hash.replace('#', '');
+      if (hash) {
+        const tab = document.querySelector(`.tab[data-collection="${hash}"]`);
+        if (tab) tab.click();
+      } else {
+        // Default to blipped
+        const tab = document.querySelector('.tab[data-collection="blipped"]');
+        if (tab) tab.click();
+      }
+    });
+    </script>
+</main>
+</body>
+</html>

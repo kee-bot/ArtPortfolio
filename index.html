@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Keerthana Jayaprakash</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Interesting Google Font: 'Montserrat' -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">Keerthana Jayaprakash</div>
+        <ul class="nav-links">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="about.html">About</a></li>
+        </ul>
+    </nav>
+    <main class="welcome-split">
+      <section class="split-section split-blipped" onclick="window.location.href='gallery.html#blipped'" style="position:relative; overflow:hidden;">
+          <img class="split-bg" src="IMAGES/IMG_8986.jpg" alt="Blipped Background" aria-hidden="true" style="z-index:0; position:absolute; inset:0; width:100%; height:100%; object-fit:cover;" />
+          <div class="split-bg-dark" style="position:absolute; inset:0; width:100%; height:100%; background:rgba(0,0,0,0.5); z-index:1;"></div>
+          <h2 style="position:relative; z-index:2;">New Collection in Progress</h2>
+          <h1 class="blipped-title" style="position:relative; z-index:2;">Blipped</h1>
+          <p class="blipped-desc" style="position:relative; z-index:2;">A surreal series exploring the beauty of distortion, glitch, and transformation.</p>
+      </section>
+      <section class="split-section split-sketchbook" onclick="window.location.href='gallery.html#sketchbook'" style="position:relative; overflow:hidden;">
+          <div class="split-bg-dark" style="position:absolute; inset:0; width:100%; height:100%; background:rgba(0,0,0,0.7); z-index:0;"></div>
+          <img class="split-bg-sketch" src="IMAGES/Sketchbook/IMG_8988.jpg" alt="Sketchbook 1" aria-hidden="true" style="position:absolute; left:10%; top:10%; width:45%; opacity:0.55; object-fit:cover; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); z-index:0;" />
+          <img class="split-bg-sketch" src="IMAGES/Sketchbook/IMG_8991.jpg" alt="Sketchbook 2" aria-hidden="true" style="position:absolute; left:40%; top:30%; width:45%; opacity:0.45; object-fit:cover; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); transform: rotate(-7deg); z-index:0;" />
+          <img class="split-bg-sketch" src="IMAGES/Sketchbook/IMG_8993.jpg" alt="Sketchbook 3" aria-hidden="true" style="position:absolute; left:25%; top:45%; width:40%; opacity:0.40; object-fit:cover; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.10); transform: rotate(7deg); z-index:0;" />
+          <h2 style="position:relative; z-index:1;">View Sketchbook</h2>
+          <p class="sketchbook-desc" style="position:relative; z-index:1;">Browse spontaneous sketches, raw ideas, and creative doodles.</p>
+      </section>
+    </main>
+</body>
+</html>
