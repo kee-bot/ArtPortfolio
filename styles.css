@@ -114,7 +114,7 @@ body {
 .image-modal-content {
   max-width: 90vw;
   max-height: 85vh;
-  border-radius: 14px;
+  border-radius: 0;
   box-shadow: 0 4px 32px rgba(0,0,0,0.25);
   background: #fff;
   object-fit: contain;
@@ -472,9 +472,14 @@ body {
     aspect-ratio: 1 / 1;
     height: auto;
     object-fit: cover;
+    /* Remove object-position from here, so it does not affect all images */
     border-radius: 0;
     margin-bottom: 1.1rem;
     box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.img-bottom-align {
+    object-position: bottom;
 }
 
 .art-tile h2 {
